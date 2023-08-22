@@ -7,8 +7,8 @@
     <title>TGIF小卡</title>
 </head>
 <body>
-<h1 class="title">恭喜你抽中了以下小卡：</h1>
-<div id="result"></div>
+<div class="title">恭喜你抽中了以下小卡：</div>
+<!-- <div id="result"></div> -->
 <div id="image-container" class="image-container"></div>
 
 <script>
@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var randomIndex = Math.floor(Math.random() * numbers.length);
 
     // 将抽取结果显示在页面上
-    var resultDiv = document.getElementById("result");
-    resultDiv.textContent = randomIndex;
+    // var resultDiv = document.getElementById("result");
+    // resultDiv.textContent = randomIndex;
 
     var imgElement = document.createElement("img"); // 创建 <img> 元素
     imgElement.src = numbers[randomIndex]; // 设置 src 属性
@@ -52,14 +52,32 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 <style>
-    .title.image-container {
+    html {
+        font-size: 100px;
+    }
+    @media screen and (max-width: 360px) {
+        html {
+            font-size: 90px!important;
+        }
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title {
+        font: 18px/24px -apple-system,Arial,Helvetica,sans-serif;
+        color: #1e1f24;
+        font-weight: 500!important;
+        font-family: -apple-system,Arial,Helvetica,sans-serif;
+        -webkit-text-stroke: 0;
+    }
+    .title,img {
         margin: 0 auto;
-        /* width: .85rem;
-        height: .54rem; */
-        /* border-radius: .12rem;
-        border: 1px solid rgba(0,0,0,.06); */
     }
     img {
+        margin-top: .12rem;
         border-radius: .12rem;
         border: 1px solid rgba(0,0,0,.06);
     }
