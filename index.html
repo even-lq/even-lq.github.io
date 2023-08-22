@@ -7,6 +7,24 @@
     <title>TGIF小卡</title>
 </head>
 <body>
-    hello word
+<h1>恭喜你抽中了以下小卡：</h1>
+<ul id="result"></ul>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 初始化待抽取的数字数组
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    // 用于存放抽取结果的数组
+    var resultArray = [];
+
+    // 生成一个随机索引
+    var randomIndex = Math.floor(Math.random() * numbers.length);
+
+    // 将抽取结果显示在页面上
+    var resultDiv = document.getElementById("result");
+    resultDiv.textContent = numbers[randomIndex];
+});
+</script>
 </body>
 </html>
