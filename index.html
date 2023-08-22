@@ -8,12 +8,22 @@
 </head>
 <body>
 <h1>恭喜你抽中了以下小卡：</h1>
-<ul id="result"></ul>
+<div id="result"></div>
+<div id="image-container" class="image-container"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化待抽取的数字数组
-    var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+    var numbers = [
+        'https://wx3.sinaimg.cn/mw1024/006B9DPely1hgsucltmrdj30wi1crn1t.jpg',
+        'https://wx3.sinaimg.cn/mw1024/0079eknRly1ha9jpn041dj30u011i0wc.jpg',
+        'https://wx2.sinaimg.cn/orj360/0079eknRly1ha9jpksm1wj31ha1ukb29.jpg',
+        'https://wx3.sinaimg.cn/orj360/008ucohLgy1h9phemj2p3j31ar208qho.jpg',
+        'https://wx1.sinaimg.cn/mw1024/008ucohLgy1h9phelrwbxj31ar2084da.jpg',
+        'https://wx2.sinaimg.cn/large/c46d2cf0gy1hh5mez71waj216o1kwapr.jpg',
+        'https://wx1.sinaimg.cn/large/006TnGumgy1hh4mfrkn2pj316o1kwh1e.jpg',
+        'https://wx4.sinaimg.cn/large/006TnGumgy1hh3cs4cwg4j316o1kwqkx.jpg'
+    ];
 
     // 用于存放抽取结果的数组
     var resultArray = [];
@@ -23,8 +33,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 将抽取结果显示在页面上
     var resultDiv = document.getElementById("result");
-    resultDiv.textContent = numbers[randomIndex];
+    resultDiv.textContent = randomIndex;
+
+    var imgElement = document.createElement("img"); // 创建 <img> 元素
+    imgElement.src = numbers[randomIndex]; // 设置 src 属性
+
+    var imageContainer = document.getElementById("image-container"); // 获取图片容器
+    imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
 });
 </script>
 </body>
+
+<style>
+    .image-container {
+        margin: 0 auto;
+        width: .85rem;
+        width: .54rem;
+        border-radius: .12rem;
+        border: 1px solid rgba(0,0,0,.06);
+    }
+</style>
 </html>
