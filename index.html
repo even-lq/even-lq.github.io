@@ -7,7 +7,7 @@
     <title>TGIF小卡</title>
 </head>
 <body>
-<h1>恭喜你抽中了以下小卡：</h1>
+<h1 class="title">恭喜你抽中了以下小卡：</h1>
 <div id="result"></div>
 <div id="image-container" class="image-container"></div>
 
@@ -52,10 +52,14 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 <style>
-    .image-container {
+    .title.image-container {
         margin: 0 auto;
-        width: .85rem;
-        height: .54rem;
+        /* width: .85rem;
+        height: .54rem; */
+        /* border-radius: .12rem;
+        border: 1px solid rgba(0,0,0,.06); */
+    }
+    img {
         border-radius: .12rem;
         border: 1px solid rgba(0,0,0,.06);
     }
