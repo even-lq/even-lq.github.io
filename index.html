@@ -84,21 +84,21 @@ document.addEventListener("DOMContentLoaded", function() {
     //     console.log("图片加载成功！");
     //     // 在这里可以执行其他操作，比如更新页面内容
     // };
-    var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
-    var imageContainer = document.getElementById("image-container"); // 获取图片容器
+    // var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
+    // var imageContainer = document.getElementById("image-container"); // 获取图片容器
     // preloadImages(numbers, function(loadedImages) {
     //     const resImg = loadedImages[randomIndex];
     //     ldsEllipsis.style.display = "none";
     //     // imageContainer.appendChild(resImg);
     // });
-    var img = document.getElementById(`tgif-img${randomIndex}`); // 获取图片容器
-    var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
-    img.onload = function() {
-        ldsEllipsis.style.display = "none";
-        img.style.display = "block";
-        console.log("图片加载成功！");
-        // 在这里可以执行其他操作，比如更新页面内容
-    };
+    // var img = document.getElementById(`tgif-img${randomIndex}`); // 获取图片容器
+    // var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
+    // img.onload = function() {
+    //     ldsEllipsis.style.display = "none";
+    //     img.style.display = "block";
+    //     console.log("图片加载成功！");
+    //     // 在这里可以执行其他操作，比如更新页面内容
+    // };
     // var imageContainer = document.getElementById("image-container"); // 获取图片容器
     // imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
 });
@@ -141,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .image-container {
         width: 3.6rem;
     }
-    .tgif-img {
+    /* .tgif-img {
         display: none;
-    }
+    } */
     .image-container img {
         width: 100%;
         height: auto;
