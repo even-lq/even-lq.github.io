@@ -7,29 +7,28 @@
     <title>TGIF小卡</title>
 </head>
 <body>
-<div class="title">恭喜你抽中了以下小卡：</div>
-<!-- <div id="result"></div> -->
-<div id="image-container" class="image-container"></div>
-
+    <div class="result">
+        <div class="title">恭喜你抽中了以下小卡：</div>
+        <div id="lds-ellipsis" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <div id="image-container" class="image-container"></div>
+    </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化待抽取的数字数组
     var numbers = [
-        'https://i.postimg.cc/dDGBW83x/new-1.jpg',
+        'https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png',
+        
+        'https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png',
 
-        'https://i.postimg.cc/N9vcc6cz/le-6.jpg',
+        'https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png',
+        
+        'https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png',
+        
+        'https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png',
+        
+        'https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png',
 
-        'https://i.postimg.cc/wy5dT1xT/le-7.jpg',
-
-        'https://i.postimg.cc/HJygRSfM/le-8.jpg',
-
-        'https://i.postimg.cc/jDCKQqcZ/new-2.jpg',
-
-        'https://i.postimg.cc/sM8znF0y/new-3.jpg',
-
-        'https://i.postimg.cc/RNSvhLHr/new-4.jpg',
-
-        'https://i.postimg.cc/ZCw4dv8W/new-5.jpg',
+        'https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png'
     ];
 
     // 用于存放抽取结果的数组
@@ -44,6 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var imgElement = document.createElement("img"); // 创建 <img> 元素
     imgElement.src = numbers[randomIndex]; // 设置 src 属性
+    imgElement.style.display = "none";
+    imgElement.onload = function() {
+        var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
+        ldsEllipsis.style.display = "none";
+        imgElement.style.display = "block";
+        console.log("图片加载成功！");
+        // 在这里可以执行其他操作，比如更新页面内容
+    };
 
     var imageContainer = document.getElementById("image-container"); // 获取图片容器
     imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
@@ -52,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
     html {
         font-size: 100px;
     }
@@ -61,10 +72,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     body {
+        height: 100%;
+        text-align: center;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        background-color: #77a799;
+        height: 100vh; /* 100% 视口高度 */
+    }
+    .result {
+        margin: auto;
     }
     .title {
         font: 18px/24px -apple-system,Arial,Helvetica,sans-serif;
@@ -73,13 +91,75 @@ document.addEventListener("DOMContentLoaded", function() {
         font-family: -apple-system,Arial,Helvetica,sans-serif;
         -webkit-text-stroke: 0;
     }
+    .image-container {
+        width: 3.6rem;
+    }
+    .image-container img {
+        width: 3.6rem;
+    }
     .title,img {
         margin: 0 auto;
     }
     img {
         margin-top: .12rem;
         border-radius: .12rem;
-        border: 1px solid rgba(0,0,0,.06);
+        border: 1px solid rgba(0,0,0,.09);
     }
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: .8rem;
+        height: .8rem;
+    }
+    .lds-ellipsis div {
+        position: absolute;
+        top: .33rem;
+        width: .13rem;
+        height: .13rem;
+        border-radius: 50%;
+        background: #bde6d9;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+        left: .08rem;
+        animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+        left: .08rem;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+        left: .32rem;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+        left: .56rem;
+        animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+        }
+        @keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+        }
+        @keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(.24rem, 0);
+        }
+    }
+
 </style>
 </html>
