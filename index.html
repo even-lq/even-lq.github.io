@@ -4,38 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="preload" href="https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png" as="image" /> -->
     <title>TGIF小卡</title>
 </head>
 <body>
     <div class="result">
-        <div class="title">🎉恭喜你抽中了以下小卡：</div>
+        <div class="title">🎉 恭喜你抽中了以下小卡：</div>
         <div id="lds-ellipsis" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         <div id="image-container" class="image-container">
     </div>
-    <!-- <img src="https://even-bucket.bj.bcebos.com/xgxiaoka/601693807551_.pic_hd.jpg" alt=""> -->
 <script>
-function preloadImages(imageUrls, callback) {
-  const loadedImages = [];
-  let loadedCount = 0;
-
-  for (let i = 0; i < imageUrls.length; i++) {
-    const img = new Image();
-    img.onload = () => {
-      loadedCount++;
-      if (loadedCount === imageUrls.length) {
-        // 所有图片都已加载完成
-        callback(loadedImages);
-      }
-    };
-    img.src = imageUrls[i];
-    loadedImages.push(img);
-  }
-}
 
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化待抽取的数字数组
     var numbers = [
+        // 图床高清
         // 'https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png',
         
         // 'https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png',
@@ -68,13 +50,14 @@ document.addEventListener("DOMContentLoaded", function() {
         'https://even-bucket.bj.bcebos.com/xgxiaoka/651693807555_.pic_hd.jpg',
         'https://even-bucket.bj.bcebos.com/xgxiaoka/661693807557_.pic_hd.jpg'
 
-    //     // 'https://i.postimg.cc/mDZcTtnT/601693807551-pic.jpg',
-    //     // 'https://i.postimg.cc/Qt6FCjL1/611693807552-pic.jpg',
-    //     // 'https://i.postimg.cc/0ygbbt4W/621693807553-pic.jpg',
-    //     // 'https://i.postimg.cc/dQx7KQjK/631693807554-pic.jpg',
-    //     // 'https://i.postimg.cc/Bbkt5Nnv/641693807554-pic.jpg',
-    //     // 'https://i.postimg.cc/pX5mVNs5/651693807555-pic.jpg',
-    //     // 'https://i.postimg.cc/5y66FD1G/661693807557-pic.jpg'
+        // 图床低清
+        // 'https://i.postimg.cc/mDZcTtnT/601693807551-pic.jpg',
+        // 'https://i.postimg.cc/Qt6FCjL1/611693807552-pic.jpg',
+        // 'https://i.postimg.cc/0ygbbt4W/621693807553-pic.jpg',
+        // 'https://i.postimg.cc/dQx7KQjK/631693807554-pic.jpg',
+        // 'https://i.postimg.cc/Bbkt5Nnv/641693807554-pic.jpg',
+        // 'https://i.postimg.cc/pX5mVNs5/651693807555-pic.jpg',
+        // 'https://i.postimg.cc/5y66FD1G/661693807557-pic.jpg'
 
     ];
 
@@ -92,23 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ldsEllipsis.style.display = "none";
         imgElement.style.display = "block";
         console.log("图片加载成功！");
-        // 在这里可以执行其他操作，比如更新页面内容
     };
-    // var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
-    // var imageContainer = document.getElementById("image-container"); // 获取图片容器
-    // preloadImages(numbers, function(loadedImages) {
-    //     const resImg = loadedImages[randomIndex];
-    //     ldsEllipsis.style.display = "none";
-    //     // imageContainer.appendChild(resImg);
-    // });
-    // var img = document.getElementById(`tgif-img${randomIndex}`); // 获取图片容器
-    // var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
-    // img.onload = function() {
-    //     ldsEllipsis.style.display = "none";
-    //     img.style.display = "block";
-    //     console.log("图片加载成功！");
-    //     // 在这里可以执行其他操作，比如更新页面内容
-    // };
     var imageContainer = document.getElementById("image-container"); // 获取图片容器
     imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
 });
