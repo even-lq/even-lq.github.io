@@ -13,6 +13,24 @@
         <div id="image-container" class="image-container"></div>
     </div>
 <script>
+function preloadImages(imageUrls, callback) {
+  const loadedImages = [];
+  let loadedCount = 0;
+
+  for (let i = 0; i < imageUrls.length; i++) {
+    const img = new Image();
+    img.onload = () => {
+      loadedCount++;
+      if (loadedCount === imageUrls.length) {
+        // 所有图片都已加载完成
+        callback(loadedImages);
+      }
+    };
+    img.src = imageUrls[i];
+    loadedImages.push(img);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化待抽取的数字数组
     var numbers = [
@@ -37,23 +55,32 @@ document.addEventListener("DOMContentLoaded", function() {
     // 生成一个随机索引
     var randomIndex = Math.floor(Math.random() * numbers.length);
 
-    // 将抽取结果显示在页面上
-    // var resultDiv = document.getElementById("result");
-    // resultDiv.textContent = randomIndex;
-
     var imgElement = document.createElement("img"); // 创建 <img> 元素
-    imgElement.src = numbers[randomIndex]; // 设置 src 属性
-    imgElement.style.display = "none";
-    imgElement.onload = function() {
-        var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
-        ldsEllipsis.style.display = "none";
-        imgElement.style.display = "block";
-        console.log("图片加载成功！");
-        // 在这里可以执行其他操作，比如更新页面内容
-    };
-
+    // imgElement.src = numbers[randomIndex]; // 设置 src 属性
+    // imgElement.style.display = "none";
+    // imgElement.onload = function() {
+    //     var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
+    //     ldsEllipsis.style.display = "none";
+    //     setTimeout(() => {
+    //         imgElement.style.display = "block";
+    //     }, 2000);
+    //     console.log("图片加载成功！");
+    //     // 在这里可以执行其他操作，比如更新页面内容
+    // };
+    var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
     var imageContainer = document.getElementById("image-container"); // 获取图片容器
-    imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
+    preloadImages(numbers, function(loadedImages) {
+        const resImg = loadedImages[randomIndex];
+        // // 所有图片都已加载完成，可以进行下一步操作
+        // console.log('所有图片已加载完成');
+        // // 在这里可以使用 loadedImages 数组中的图片
+        // console.log(loadedImages)
+        ldsEllipsis.style.display = "none";
+        imageContainer.appendChild(resImg);
+    });
+
+    // var imageContainer = document.getElementById("image-container"); // 获取图片容器
+    // imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
 });
 </script>
 </body>
