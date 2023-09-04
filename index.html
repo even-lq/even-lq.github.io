@@ -10,7 +10,15 @@
     <div class="result">
         <div class="title">恭喜你抽中了以下小卡：</div>
         <div id="lds-ellipsis" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        <div id="image-container" class="image-container"></div>
+        <div id="image-container" class="image-container">
+            <img src="https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png" alt="" id="tgif-img0" class="tgif-img">
+            <img src="https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png" alt="" id="tgif-img1" class="tgif-img">
+            <img src="https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png" alt="" id="tgif-img2" class="tgif-img">
+            <img src="https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png" alt="" id="tgif-img3" class="tgif-img">
+            <img src="https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png" alt="" id="tgif-img4" class="tgif-img">
+            <img src="https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png" alt="" id="tgif-img5" class="tgif-img">
+            <img src="https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png" alt="" id="tgif-img6" class="tgif-img">
+        </div>
     </div>
 <script>
 function preloadImages(imageUrls, callback) {
@@ -34,27 +42,27 @@ function preloadImages(imageUrls, callback) {
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化待抽取的数字数组
     var numbers = [
-        // 'https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png',
+        'https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png',
         
-        // 'https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png',
+        'https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png',
 
-        // 'https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png',
+        'https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png',
         
-        // 'https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png',
+        'https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png',
         
-        // 'https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png',
+        'https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png',
         
-        // 'https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png',
+        'https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png',
 
-        // 'https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png'
+        'https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png'
 
-        'https://i.postimg.cc/mDZcTtnT/601693807551-pic.jpg',
-        'https://i.postimg.cc/Qt6FCjL1/611693807552-pic.jpg',
-        'https://i.postimg.cc/0ygbbt4W/621693807553-pic.jpg',
-        'https://i.postimg.cc/dQx7KQjK/631693807554-pic.jpg',
-        'https://i.postimg.cc/Bbkt5Nnv/641693807554-pic.jpg',
-        'https://i.postimg.cc/pX5mVNs5/651693807555-pic.jpg',
-        'https://i.postimg.cc/5y66FD1G/661693807557-pic.jpg'
+    //     // 'https://i.postimg.cc/mDZcTtnT/601693807551-pic.jpg',
+    //     // 'https://i.postimg.cc/Qt6FCjL1/611693807552-pic.jpg',
+    //     // 'https://i.postimg.cc/0ygbbt4W/621693807553-pic.jpg',
+    //     // 'https://i.postimg.cc/dQx7KQjK/631693807554-pic.jpg',
+    //     // 'https://i.postimg.cc/Bbkt5Nnv/641693807554-pic.jpg',
+    //     // 'https://i.postimg.cc/pX5mVNs5/651693807555-pic.jpg',
+    //     // 'https://i.postimg.cc/5y66FD1G/661693807557-pic.jpg'
 
     ];
 
@@ -78,19 +86,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // };
     var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
     var imageContainer = document.getElementById("image-container"); // 获取图片容器
-    preloadImages(numbers, function(loadedImages) {
-        const resImg = loadedImages[randomIndex];
-        // // 所有图片都已加载完成，可以进行下一步操作
-        // console.log('所有图片已加载完成');
-        // // 在这里可以使用 loadedImages 数组中的图片
-        // console.log(loadedImages)
+    // preloadImages(numbers, function(loadedImages) {
+    //     const resImg = loadedImages[randomIndex];
+    //     ldsEllipsis.style.display = "none";
+    //     // imageContainer.appendChild(resImg);
+    // });
+    var img = document.getElementById(`tgif-img${randomIndex}`); // 获取图片容器
+    var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
+    img.onload = function() {
         ldsEllipsis.style.display = "none";
-        // imageContainer.style.display = "none";
-        // setTimeout(() => {
-            imageContainer.appendChild(resImg);
-        // }, 2000)
-    });
-
+        img.style.display = "block";
+        console.log("图片加载成功！");
+        // 在这里可以执行其他操作，比如更新页面内容
+    };
     // var imageContainer = document.getElementById("image-container"); // 获取图片容器
     // imageContainer.appendChild(imgElement); // 将 <img> 元素添加到容器中
 });
@@ -132,6 +140,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     .image-container {
         width: 3.6rem;
+    }
+    .tgif-img {
+        display: none;
     }
     .image-container img {
         width: 100%;
