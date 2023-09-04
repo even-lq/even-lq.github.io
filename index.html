@@ -9,18 +9,8 @@
 </head>
 <body>
     <div class="result">
-        <div class="title">恭喜你抽中了以下小卡：</div>
+        <div class="title">🎉恭喜你抽中了以下小卡：</div>
         <div id="lds-ellipsis" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        <!-- <div id="image-container" class="image-container1">
-            <img src="https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png" alt="" id="tgif-img0" class="tgif-img">
-            <img src="https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png" alt="" id="tgif-img1" class="tgif-img">
-            <img src="https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png" alt="" id="tgif-img2" class="tgif-img">
-            <img src="https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png" alt="" id="tgif-img3" class="tgif-img">
-            <img src="https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png" alt="" id="tgif-img4" class="tgif-img">
-            <img src="https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png" alt="" id="tgif-img5" class="tgif-img">
-            <img src="https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png" alt="" id="tgif-img6" class="tgif-img">
-        </div> -->
-        <!-- <img src="https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png" width="1080" id="tgif-img0" class="tgif-img"> -->
         <div id="image-container" class="image-container">
     </div>
 <script>
@@ -81,9 +71,9 @@ document.addEventListener("DOMContentLoaded", function() {
     imgElement.onload = function() {
         var ldsEllipsis = document.getElementById("lds-ellipsis"); // 获取图片容器
         ldsEllipsis.style.display = "none";
-        setTimeout(() => {
-            imgElement.style.display = "block";
-        }, 2000);
+        // setTimeout(() => {
+        imgElement.style.display = "block";
+        // }, 2000);
         console.log("图片加载成功！");
         // 在这里可以执行其他操作，比如更新页面内容
     };
@@ -143,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     .image-container {
         width: 1.2rem;
+        margin: 0 auto;
         /* height: 5.05rem; */
         /* background: url(https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png);
         background-position: center center;
@@ -164,7 +155,6 @@ document.addEventListener("DOMContentLoaded", function() {
         width: 100%;
         height: auto;
         object-fit: contain;
-        image-rendering: pixelated;
     }
     .title,img {
         margin: 0 auto;
