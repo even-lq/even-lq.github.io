@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ldsEllipsis.style.display = "none";
         setTimeout(() => {
             imageContainer.appendChild(resImg);
-        }, 2000)
+        })
     });
 
     // var imageContainer = document.getElementById("image-container"); // 获取图片容器
@@ -126,6 +126,11 @@ document.addEventListener("DOMContentLoaded", function() {
     .image-container img {
         width: 100%;
         height: auto;
+        image-rendering: -moz-crisp-edges; /* Firefox */
+        image-rendering: -o-crisp-edges; /* Opera */
+        image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
     }
     .title,img {
         margin: 0 auto;
