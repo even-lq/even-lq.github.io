@@ -34,19 +34,35 @@ function preloadImages(imageUrls, callback) {
 document.addEventListener("DOMContentLoaded", function() {
     // 初始化待抽取的数字数组
     var numbers = [
-        'https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png',
+        // 'https://i.postimg.cc/8CTMdgQX/601693807551-pic-hd.png',
         
-        'https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png',
+        // 'https://i.postimg.cc/HL35BvTY/611693807552-pic-hd.png',
 
-        'https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png',
+        // 'https://i.postimg.cc/PNG8PBQ4/621693807553-pic-hd.png',
         
-        'https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png',
+        // 'https://i.postimg.cc/mZPX1CSz/631693807554-pic-hd.png',
         
-        'https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png',
+        // 'https://i.postimg.cc/W3HZPDDx/641693807554-pic-hd.png',
         
-        'https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png',
+        // 'https://i.postimg.cc/NMMXV801/651693807555-pic-hd.png',
 
-        'https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png'
+        // 'https://i.postimg.cc/sxGhfV7x/661693807557-pic-hd.png'
+
+        'https://i.postimg.cc/4KM45NZ0/601693807551-pic.jpg',
+
+'https://i.postimg.cc/2bZkXRSS/611693807552-pic.jpg',
+
+'https://i.postimg.cc/tY5XczpW/621693807553-pic.jpg',
+
+'https://i.postimg.cc/z3TDCrQd/631693807554-pic.jpg',
+
+'https://i.postimg.cc/wR56gXJK/641693807554-pic.jpg',
+
+'https://i.postimg.cc/ZCZbjQtJ/651693807555-pic.jpg',
+
+'https://i.postimg.cc/dZcqbHhm/661693807557-pic.jpg',
+
+
     ];
 
     // 用于存放抽取结果的数组
@@ -76,9 +92,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // // 在这里可以使用 loadedImages 数组中的图片
         // console.log(loadedImages)
         ldsEllipsis.style.display = "none";
-        setTimeout(() => {
+        // imageContainer.style.display = "none";
+        // setTimeout(() => {
             imageContainer.appendChild(resImg);
-        }, 2000)
+        // }, 2000)
     });
 
     // var imageContainer = document.getElementById("image-container"); // 获取图片容器
